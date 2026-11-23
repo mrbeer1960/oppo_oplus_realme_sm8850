@@ -28,7 +28,7 @@ on:
         type: boolean
         default: 'true'
       kpm_enable:
-        description: '是否开启kpm(使用KpatchNext独立实现kpm(支持任意KSU/面具环境); 不需要可保持默认关闭)'
+        description: '是否开启kpm(内置原版 KernelPatch 的 kpimg，支持任意KSU/面具环境)'
         required: true
         type: boolean
         default: 'false'
