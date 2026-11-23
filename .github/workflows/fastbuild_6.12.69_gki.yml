@@ -28,7 +28,7 @@ on:
         type: boolean
         default: 'true'
       kpm_enable:
-        description: '是否开启kpm(内置原版 KernelPatch 的 kpimg，支持任意KSU/面具环境)'
+        description: '是否开启kpm(内置 KPatch-Next 的 kpimg，支持任意KSU/面具环境)'
         required: true
         type: boolean
         default: 'false'
@@ -705,8 +705,8 @@ jobs:
         run: |
           echo "正在应用KP-N并修补内核..."
           cd kernel_workspace/common/out/arch/arm64/boot
-          wget https://github.com/bmax121/KernelPatch/releases/latest/download/kptools-linux
-          wget https://github.com/bmax121/KernelPatch/releases/latest/download/kpimg-linux
+          wget https://github.com/KernelSU-Next/KPatch-Next/releases/latest/download/kptools-linux
+          wget https://github.com/KernelSU-Next/KPatch-Next/releases/latest/download/kpimg-linux
           chmod +x ./kptools-linux
           ./kptools-linux -p -i ./Image -k ./kpimg-linux -o ./oImage
           rm -f Image
