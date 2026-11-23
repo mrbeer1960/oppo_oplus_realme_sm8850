@@ -651,6 +651,9 @@ jobs:
           KCFLAGS+=" -Wno-error"
           KCFLAGS+=" -fno-stack-protector"
           KCFLAGS+=" -D__ANDROID_COMMON_KERNEL__"
+          # 3.1 强制内核信任本地自定义管理器签名（bakasu2048 证书，786 字节）
+          KCFLAGS+=" -DEXPECTED_SIZE=0x312"
+          KCFLAGS+=" -DEXPECTED_HASH=\"2281d59f45055bbe96e87b53c7afdbb133c702325387dfbc9869e1716191d4b5\""
           export KCFLAGS
           # 4. 配置其他工具及选项（非必须，防错冗余）
           export HOSTCC=clang
